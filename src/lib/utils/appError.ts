@@ -1,9 +1,3 @@
-type AppErrorType = {
-  statusCode: number;
-  status: string;
-  isOperational: boolean;
-};
-
 class AppError extends Error {
   statusCode: number;
   status: string;

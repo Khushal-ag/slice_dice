@@ -1,4 +1,4 @@
-import { CreateUser, LoginUser } from "@/controllers/user.action";
+import { CreateUser, LoginUser } from "@/controllers/auth.action";
 import express from "express";
 export const auth = express.Router();
 

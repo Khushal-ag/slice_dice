@@ -1,5 +1,4 @@
 import { model, Schema } from "mongoose";
-import bcrypt from "bcrypt";
 
 // Define the user schema
 const UserSchema = new Schema({
@@ -15,18 +14,12 @@ const UserSchema = new Schema({
   password: {
     type: String,
     required: true,
+    select: false,
   },
 });
 
 // Create and export the Mongoose model
 export const User = model("User", UserSchema);
-
-UserSchema.methods.correctPassword = async function (
-  candidatePassword: string,
-  userPassword: string
-) {
-  return await bcrypt.compare(candidatePassword, userPassword);
-};
 
 // Define the types for new user and user
 export type NewUser = {
