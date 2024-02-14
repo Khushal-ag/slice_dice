@@ -25,16 +25,21 @@ export const allStats = asyncHandler(async (req, res) => {
 });
 
 export const statsByDepartment = asyncHandler(async (req, res) => {
-  const summaryStatistics = await Employee.aggregate([
-    {
-      $group: {
-        _id: "$department",
-        mean: { $avg: "$salary" },
-        min: { $min: "$salary" },
-        max: { $max: "$salary" },
+  const summaryStatistics = await Employee.aggregate(
+    [
+      {
+        $group: {
+          _id: "$department",
+          mean: { $avg: "$salary" },
+          min: { $min: "$salary" },
+          max: { $max: "$salary" },
+        },
       },
+    ],
+    {
+      maxTimeMS: 60000,
     },
-  ]);
+  );
   if (summaryStatistics.length === 0) {
     res.status(404).json({ message: "No employees found" });
     return;
@@ -43,17 +48,22 @@ export const statsByDepartment = asyncHandler(async (req, res) => {
 });
 
 export const statsByContract = asyncHandler(async (req, res) => {
-  const summaryStatistics = await Employee.aggregate([
-    { $match: { on_contract: true } },
-    {
-      $group: {
-        _id: null,
-        mean: { $avg: "$salary" },
-        min: { $min: "$salary" },
-        max: { $max: "$salary" },
+  const summaryStatistics = await Employee.aggregate(
+    [
+      { $match: { on_contract: true } },
+      {
+        $group: {
+          _id: null,
+          mean: { $avg: "$salary" },
+          min: { $min: "$salary" },
+          max: { $max: "$salary" },
+        },
       },
+    ],
+    {
+      maxTimeMS: 60000,
     },
-  ]);
+  );
   if (summaryStatistics.length === 0) {
     res.status(404).json({ message: "No employees found" });
     return;
@@ -62,15 +72,20 @@ export const statsByContract = asyncHandler(async (req, res) => {
 });
 
 export const statsBySubDepartment = asyncHandler(async (req, res) => {
-  const summaryStatistics = await Employee.aggregate([
-    {
-      $group: {
-        _id: { department: "$department", sub_department: "$sub_department" },
-        mean: { $avg: "$salary" },
-        min: { $min: "$salary" },
-        max: { $max: "$salary" },
+  const summaryStatistics = await Employee.aggregate(
+    [
+      {
+        $group: {
+          _id: { department: "$department", sub_department: "$sub_department" },
+          mean: { $avg: "$salary" },
+          min: { $min: "$salary" },
+          max: { $max: "$salary" },
+        },
       },
+    ],
+    {
+      maxTimeMS: 60000,
     },
-  ]);
+  );
   res.json(summaryStatistics);
 });
