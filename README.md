@@ -40,7 +40,7 @@ Base URL: http://localhost:3000
 
 - An API to register a new user.
 
-```json
+```bash
 Endpoint : /auth/register or /auth/signup
 Method : POST
 ```
@@ -70,7 +70,7 @@ Response :
 
 - An API to login a user.
 
-```json
+```bash
 Endpoint : /auth/login or /auth/signin
 Method : POST
 ```
@@ -102,7 +102,7 @@ Response :
 
 - An API to upload all records from the sample **data.ts** dataset.
 
-```json
+```bash
 Endpoint : /employee/upload
 Method : GET
 ```
@@ -117,7 +117,7 @@ Response :
 
 - An API to get all records from the dataset.
 
-```json
+```bash
 Endpoint : /employee
 Method : GET
 ```
@@ -131,7 +131,7 @@ Response :
 
 - An API to add a new record to the dataset.
 
-```json
+```bash
 Endpoint : /employee/add
 Method : POST
 ```
@@ -167,7 +167,7 @@ Response :
 
 - An API to delete a record from the dataset.
 
-```json
+```bash
 Endpoint : /employee/delete/:id
 Method : DELETE
 ```
@@ -193,7 +193,7 @@ Response :
 
 - An API to fetch Summary Statistics for salary over the entire dataset.
 
-```json
+```bash
 Endpoint : /stats/all
 Method : GET
 ```
@@ -210,7 +210,7 @@ Response :
 
 - An API to fetch Summary Statistics for salary for records which satisfy "on_contract": "true".
 
-```json
+```bash
 Endpoint : /stats/contract
 Method : GET
 ```
@@ -227,7 +227,7 @@ Response :
 
 - An API to fetch Summary Statistics for salary for each department..
 
-```json
+```bash
 Endpoint : /stats/department
 Method : GET
 ```
@@ -264,7 +264,7 @@ Response :
 
 - An API to fetch Summary Statistic for salary for each department and sub-department combination.
 
-```json
+```bash
 Endpoint : /stats/sub
 Method : GET
 ```
