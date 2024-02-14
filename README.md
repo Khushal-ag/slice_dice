@@ -8,7 +8,7 @@
 
 🚧 **Create `.env` file & add your own `ENV_VARIABLES` as mentioned in `.env.example` file.**
 
-```bash
+```csharp
 PORT=3000
 MONGODB_URI = <Your MongoDB URI>
 JWT_SECRET = <Your JWT Secret>
@@ -16,7 +16,7 @@ JWT_SECRET = <Your JWT Secret>
 
 - 💻 **Run Project Locally(pnpm should be installed):**
 
-```bash
+```csharp
 pnpm i
 
 pnpm dev
@@ -24,7 +24,7 @@ pnpm dev
 
 - 🐋 **Run with Docker:**
 
-```bash
+```csharp
 docker build -t slice-dice .
 
 docker compose up
@@ -32,7 +32,7 @@ docker compose up
 
 ## APIs
 
-```bash
+```csharp
 Base URL: http://localhost:3000
 ```
 
@@ -40,12 +40,12 @@ Base URL: http://localhost:3000
 
 - An API to register a new user.
 
-```bash
+```csharp
 Endpoint : /auth/register or /auth/signup
 Method : POST
 ```
 
-```json
+```csharp
 Request Body :
 {
     "name": "John Doe",
@@ -54,7 +54,7 @@ Request Body :
 }
 ```
 
-```json
+```csharp
 Response :
 {
   "message": "User created successfully",
@@ -70,12 +70,12 @@ Response :
 
 - An API to login a user.
 
-```bash
+```csharp
 Endpoint : /auth/login or /auth/signin
 Method : POST
 ```
 
-```json
+```csharp
 Request Body :
 {
     "email": "J@test.com",
@@ -83,7 +83,7 @@ Request Body :
 }
 ```
 
-```json
+```csharp
 Response :
 {
   "message": "Login successful",
@@ -102,12 +102,12 @@ Response :
 
 - An API to upload all records from the sample **data.ts** dataset.
 
-```bash
+```csharp
 Endpoint : /employee/upload
 Method : GET
 ```
 
-```json
+```csharp
 Response :
 {
   "message": "Data uploaded successfully",
@@ -117,12 +117,12 @@ Response :
 
 - An API to get all records from the dataset.
 
-```bash
+```csharp
 Endpoint : /employee
 Method : GET
 ```
 
-```json
+```csharp
 Response :
 {
   "data": "<All records>"
@@ -131,12 +131,12 @@ Response :
 
 - An API to add a new record to the dataset.
 
-```bash
+```csharp
 Endpoint : /employee/add
 Method : POST
 ```
 
-```json
+```csharp
 Request Body :
 {
     "currency": "USD",
@@ -148,7 +148,7 @@ Request Body :
 }
 ```
 
-```json
+```csharp
 Response :
 {
   "message": "Employee added successfully",
@@ -167,12 +167,12 @@ Response :
 
 - An API to delete a record from the dataset.
 
-```bash
+```csharp
 Endpoint : /employee/delete/:id
 Method : DELETE
 ```
 
-```json
+```csharp
 Response :
 {
   "message": "Employee deleted successfully",
@@ -193,12 +193,12 @@ Response :
 
 - An API to fetch Summary Statistics for salary over the entire dataset.
 
-```bash
+```csharp
 Endpoint : /stats/all
 Method : GET
 ```
 
-```json
+```csharp
 Response :
 {
   "_id": null,
@@ -210,12 +210,12 @@ Response :
 
 - An API to fetch Summary Statistics for salary for records which satisfy "on_contract": "true".
 
-```bash
+```csharp
 Endpoint : /stats/contract
 Method : GET
 ```
 
-```json
+```csharp
 Response :
 {
   "_id": null,
@@ -227,12 +227,12 @@ Response :
 
 - An API to fetch Summary Statistics for salary for each department..
 
-```bash
+```csharp
 Endpoint : /stats/department
 Method : GET
 ```
 
-```json
+```csharp
 Response :
 [
   {
@@ -264,12 +264,12 @@ Response :
 
 - An API to fetch Summary Statistic for salary for each department and sub-department combination.
 
-```bash
+```csharp
 Endpoint : /stats/sub
 Method : GET
 ```
 
-```json
+```csharp
 Response :
 [
   {
